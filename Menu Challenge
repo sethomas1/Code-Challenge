@@ -1,0 +1,42 @@
+         //Name: Stephen Thomas
+        //Date: 1808
+        //Course: Project & Portfolio
+        //Synopsis: Briefly explain this Coding Challenge
+
+
+        {
+            //Diplay welcome message
+            string welcomeTxt = "Welcome to the code challenge list:";
+
+            //Info text
+            string infoTxt = "Enter a number to choose a challenge...";
+
+            //Create Text for list 
+            string nameTxt = "\r\n[1] Swap Name";
+            string backwardsTxt = "[2] Backwards";
+            string ageTxt = "[3] Age Convert";
+            string tempTxt = "[4] Temp Convert";
+            string bigTxt = "[5] Big Blue Fish";
+            string exitTxt ="\r\n[0] Exit \r\n";
+            string promptTxt = "Please choose a number:";
+            //Creat a string for line Text
+            string lineTxt = "=====================================";
+
+
+            //Display welcom/infoi txt onto screen using the console
+            Console.WriteLine(welcomeTxt);
+            Console.WriteLine(infoTxt);
+            //Display list onto screen using console
+            Console.WriteLine(nameTxt);
+            Console.WriteLine(backwardsTxt);
+            Console.WriteLine(ageTxt);
+            Console.WriteLine(tempTxt);
+            Console.WriteLine(bigTxt);
+            Console.WriteLine(exitTxt);
+            Console.WriteLine(lineTxt);
+            Console.WriteLine(promptTxt);
+            //Creat an area for the user to enter their answer
+            string userEntry = Console.ReadLine();
+
+            //Validate that the user is entering a number 
+
