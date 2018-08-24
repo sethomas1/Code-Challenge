@@ -1,0 +1,79 @@
+ //Stephen Thomas
+            //05/20/2018
+            //Week3
+            //String objects
+
+
+
+            Console.WriteLine("Please enter your phone number");
+            // TaskCreationOptions a string to receive user input
+            string userNumber = Console.ReadLine();
+            //Create a double variable for user phone number
+            double phoneNumber;
+            //Call function from number text
+            string userNum = NumberLine(userNumber);
+
+            //Make sure the user enters a number
+            while (!double.TryParse(userNum, out phoneNumber)) {
+                Console.WriteLine("Please enter a correct number");
+                userNumber = Console.ReadLine();
+
+            }
+            //Display user number
+            Console.WriteLine("Number you have enter is "+ userNumber);
+        }
+        //Makes sure the user is entering it in the right order
+        public static string NumberLine(string numText)
+        {
+            //validate theuse is using the prper text format
+            double text = 0;
+
+            //Validate user is entering in the correct numbers
+            if (numText.Length <= 8 || numText.Length > 15)
+            {
+                Console.WriteLine("Please enter correct phone number\r\nPlease enter number as (###) ###-####");
+                //Reprompt user
+                string reEnter = Console.ReadLine();
+                return numText;
+            }
+            else
+            {
+                if(numText.StartsWith("1-"))
+                {
+                    numText = numText.Remove(0, 1);
+                    numText = numText.Remove(0, 1);
+                    numText = numText.Remove(3, 1);
+                    numText = numText.Remove(6, 1);
+
+
+
+
+                }
+                if (numText.Length == 14)
+                {
+                    numText.Remove(0, 1);
+                    numText.Remove(3, 1);
+                    numText.Remove(3, 1);
+                    numText.Remove(6, 1);
+                    text = Double.Parse(numText);
+
+
+                }
+                else if(numText.Length ==12)
+                {
+                    numText = numText.Remove(3, 1);
+                    numText = numText.Remove(6, 1);
+                    text = Double.Parse(numText);
+
+                }
+                else if (numText.Length==10)
+                {
+                    text = Double.Parse(numText);
+                }
+                else
+                {
+                    text = Double.Parse(numText);
+
+                }
+                numText = String.Format("{0:###-###-####}",text);
+                return numText;
