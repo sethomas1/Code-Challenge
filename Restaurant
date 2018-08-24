@@ -1,0 +1,102 @@
+ /*
+             * Stephen Thomas
+             * section 1.2
+             * Date 05/29/2018
+             * Resturant Calc
+             */
+
+
+            //Create string variables for promts 
+
+
+            //Ask user for the cost of item #1
+            //Ask user for cost of item #2
+            //Ask user for the cost of item #3
+            //Ask the user how much the left for tip
+            //Ask user for number of people
+           
+            string prompt1 = "Please enter a price for item #1";
+            string prompt2 = "Please enter a price for item #2";
+            string prompt3 = "Pleasse enter the cost of item #3";
+            string promptTip = "Please enter the amount of Tip% ";
+            string perPerson = "How many people are there in your group?";
+
+            //Text subtotal without  tip
+            //Text total tip
+            //Text grand total with tip
+            //Text cost per person
+
+            string displaySub = "Sub-Total Without Tip is $";
+            string displayTip = "Total Tip is $";
+            string displayGrand = "Grand total witih Tip is $";
+            string displayPer = "Cost per person is $"; 
+            
+            
+            //Create decimal to convert tip out of 100
+            decimal all = 100;
+           
+
+
+            //Display each promt to the screen with a Console.WriteLine();
+            //Create a string value to receive the users input with a Console.ReadLine();
+            Console.WriteLine(prompt1); 
+            string cost1 =Console.ReadLine();
+            Console.WriteLine(prompt2);
+            string cost2 = Console.ReadLine();
+            Console.WriteLine(prompt3);
+            string cost3 = Console.ReadLine();
+            Console.WriteLine(promptTip);
+            string costTip = Console.ReadLine();
+
+            //Calculate
+
+            
+            //Convert sting into a number
+            decimal firstConvo = Convert.ToDecimal(cost1);
+            decimal secondConvo = Convert.ToDecimal(cost2);
+            decimal thirdConvo = Convert.ToDecimal(cost3);
+            decimal tipConvo = Convert.ToDecimal(costTip);
+            
+
+            //Calculate
+
+
+
+            //Value combination
+            decimal tipValue = tipConvo / all;
+            //Sub cost
+            decimal totalSub = (firstConvo + secondConvo + thirdConvo);
+
+            //Tip amount 
+
+            decimal totalTip = totalSub*tipValue;
+
+            //Calculate Grand total with tip
+            decimal totalGrand = totalSub + totalTip;
+
+
+            //Display sub total with out bill
+            Console.WriteLine("\r\n"+displaySub + totalSub);
+            //Diplay tip value 
+            Console.WriteLine("\r\n"+displayTip+totalTip);
+            //Display Grand total
+            Console.WriteLine("\r\n"+displayGrand+totalGrand+"\r\n");
+
+
+            //Prompt user for number of people
+            Console.WriteLine(perPerson);
+            //Create a string value to receive the users input with a Console.ReadLine();
+            string numPerson = Console.ReadLine(); 
+                //Convert user input into a number
+            decimal perConvo = Convert.ToDecimal(numPerson);
+
+            //Calutlate 
+            //Value of cost per person
+            decimal costPerson =totalGrand/perConvo;
+
+            //display cost per person
+            Console.WriteLine("\r\n" + displayPer + costPerson);
+
+
+
+
