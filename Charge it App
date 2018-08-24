@@ -1,0 +1,109 @@
+
+            /*
+             * StephenThomas
+             * 06/10/2018
+             * 2.5
+             * asignment charge it
+            */
+
+
+
+
+            //Create a string variable for text
+            string maxText = "Max Credit Limit";
+            string howMuch = "How much was your purchase for ? ";
+            string numText ="Enter another total";
+            //Prompt user to try agin
+            string another = "Enter a number";
+
+
+            //Create a decimal variable to convert user input into a number
+            decimal maxNum;
+            decimal purNum;
+            decimal perOut;
+            decimal purOne;
+
+            //Prompt user to enter there credit card max
+            Console.WriteLine(maxText);
+            //Create a console .ReadLine to accept user value
+            string userMax = Console.ReadLine();
+
+
+            //Validate that the user is entering a number
+            while(!decimal.TryParse(userMax, out maxNum))
+            {
+                Console.WriteLine(another);
+                //Re-Promt the user to emnter another number
+                userMax = Console.ReadLine();
+            }
+
+
+            //Ask user for purchase 
+            Console.WriteLine(howMuch);
+            //Receive the user value
+            string userPur = Console.ReadLine();
+            //validate that the user is entering a number
+            while(!decimal.TryParse(userPur,out purNum))
+            {
+                Console.WriteLine(another);
+                //Re prompt user
+                userPur = Console.ReadLine();
+            }
+
+
+            //Calculate
+            decimal firstIN = maxNum - purNum;
+
+
+            //Create loop to cycle through the user amount spent
+            while (maxNum >= purNum)
+            {
+                //Display user total
+                Console.WriteLine("Purchas1 :{0} you can still spend ${1} ", purNum, firstIN);
+
+                //Re prompt number entery
+                Console.WriteLine(numText);
+                //Create a string text to calculate user new number
+                string perIn = Console.ReadLine();
+                //Convert string into a decimal
+                decimal.TryParse(perIn, out perOut);
+
+
+                //Calculate
+
+
+                decimal subNum = firstIN - perOut;
+                //Display new value to the console
+                Console.WriteLine("Purchas2 :{0} you can still spend ${1} ", perOut, subNum);
+
+                //Re prompt number entery
+                Console.WriteLine(numText);
+                //Create a string text to calculate user new number
+                string perOne = Console.ReadLine();
+                //Convert string into a decimal
+                decimal.TryParse(perOne, out purOne);
+
+                //Calculate
+                decimal subOne = subNum - purOne;
+
+                Console.WriteLine("Purchas3 :{0} you can still spend ${1} ", perOne, subOne);
+                continue;
+            }
+                while (maxNum < purNum)
+            {
+               
+                
+                Console.WriteLine("You have exceeded your limit ");
+                break;
+            }
+
+                /*
+                 *  Credit	Limit	– 20.00
+§ Purchase1- 5.00 - You	can	still	spend	$15.00
+§ Purchase2- 12.00	- You	can	still	spend	$3.00
+§ Purchase3- 7.00	- You	have	exceeded	your	limit	by $4.00.
+o Test	One	Of	Your	Own	&	Write	the	results	in	your	comment	section.
+
+            Own value is 25.00 credit Limit and 35.00 purchase = you have exceeded your limit
+    */
+            
