@@ -1,0 +1,105 @@
+//Create string for text
+            string firstText = "Cost of item (in $) ";
+            string secondText = "Cost of second item (in $)";
+            string perText = "% ";
+            //Create string text for result text
+            string resultOne = "Your total purchase is $";
+            string resultThree = ",which includes your ";
+            string resultFour = "dicount";
+
+            //Promt number entry
+            string plsEnter = "Enter a number";
+
+
+            //Create a double variable to validate the user is entering a number for 1 and 2
+            double numOne;
+            double numTwo;
+
+            //Create double for peercent
+            double perOne = 10;
+            double perTwo = 5;
+            double perOneConvo = .10;
+            double perTwoConvo = .5;
+
+
+
+
+
+            //Display text string with Console.WriteLine for text 1 and 2
+            //Receive the use with a ConsoleReadLine for text 1 and 2
+            Console.WriteLine(firstText);
+            string userFirst = Console.ReadLine();
+
+
+
+
+
+            Console.WriteLine(secondText);
+            string userSec = Console.ReadLine();
+
+
+            /*
+             * validate that the user is entering a number for one
+            */
+            while (!double.TryParse(userFirst, out numOne))
+            {
+                Console.WriteLine(plsEnter);
+                //Re ask user
+                userFirst = Console.ReadLine();
+            }
+            /*
+          * validate that the user is entering a number for Two
+         */
+            while (!double.TryParse(userSec, out numTwo))
+            {
+                Console.WriteLine(plsEnter);
+                //Re ask user
+                userSec = Console.ReadLine();
+            }
+
+
+            //Calculate
+
+
+
+            //Create a variable for total cost
+            double mainCost = numOne + numTwo;
+            //Discount of item one
+            double discountOne = mainCost * perOneConvo;
+            //Total with discount one
+            double totalDis = mainCost - discountOne;
+            //Discount of item 2
+            double discountTwo = mainCost * perTwoConvo;
+            //Total with discount 2
+            double totalDisTwo = mainCost - discountTwo;
+
+
+            if (mainCost >= 100)
+            {
+                //Diplay that the user will receive a ten percent discount
+                Console.WriteLine(resultOne + totalDis + resultThree + perOne + perText + resultFour);
+            }
+            //Diplay that the user will receive a ten percent discount 2
+            else if (mainCost >= 50 && mainCost < 100)
+            {
+                //Diplay that the user will receive after five percent discount
+                Console.WriteLine(resultOne + mainCost + resultThree + perTwo + perText + resultFour);
+            }
+            else
+            {
+                //Diplay that the user will receive
+                Console.WriteLine(resultOne + mainCost);
+
+            }
+
+            /*
+             * o First	Item	Cost	- $	45.50,	Second	Item	Cost	- $75.00,	Total	- $108.45
+              ▪ Results - “Your	total	purchase	is	$108.45,	which	includes	your	10%	
+                discount.”
+               o First	Item	Cost	- $	30.00,	Second	Item	Cost	- $25.00,	Total	- $52.25
+               ▪ Results - “Your	total	purchase	is	$52.25,	which	includes	your	5%	
+                 discount.”
+                o First	Item	Cost	- $	5.75,	Second	Item	Cost	- $12.50,	Total	- $18.25
+                ▪ Results - “Your	total	purchase	is	$18.25.”
+                o Test	One	Of	Your	Own
+                */
