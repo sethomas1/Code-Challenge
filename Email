@@ -1,0 +1,118 @@
+/*
+             * Stephen Thomas
+             * Date 06/17/2018
+             * section 2.4
+             * assignment string methods
+             */
+
+            //Create a  text string that will prompt he user
+            //Create A string to validate @
+            //Create A string to validate .
+            //Create string to validate space
+            string emailText = "Enter email";
+            string firstSign= "@";
+            string secSign = ".";
+            string thirdSign = " ";
+            //Console emailText
+            Console.WriteLine(emailText);
+
+            //Create a string variable to receive the user input
+            string userEmail = Console.ReadLine();
+
+            //Create new string datatype
+            string email = userEmail;
+
+            double numEnter;
+             //Creat if statement to valdate that there is not 22 @
+             //Create doouble variable to catvh the string
+            int enterUser = userEmail.IndexOf("@");
+            //Store in string variable
+            string theSub = userEmail.Substring(enterUser);
+            //Find the index of the first string
+            int first = userEmail.IndexOf("@");
+
+            //Substring
+            string subF = userEmail.Substring(first);
+
+        
+
+             //Convet sting to double
+          
+
+            
+            //
+            while (userEmail.Contains(thirdSign) || !userEmail.Contains(firstSign) || string.IsNullOrEmpty(userEmail) || userEmail.IndexOf('.') < userEmail.IndexOf('@')|| userEmail.IndexOf('@') < userEmail.LastIndexOf('@', 1)|| !userEmail.Contains("@"))
+                {
+                    Console.WriteLine("Try agin");
+                    //Re promp user
+                    userEmail = Console.ReadLine();
+                
+                }
+           
+
+            Console.WriteLine(userEmail.Length);
+
+            /*
+             * Email	– test@fullsail.com
+§ Results	- “The	email	address	of	test@fullsail.com	is	a	valid email	address.”
+o Email	– test@full@sail.com
+§ Results	- “The	email	address	of	test@full@sail.com	is	not	a	valid email	
+address.”
+o Email	– test@full	sail.com
+§ Results	- “The	email	address	of	test@full	sail.com	is	not	a	valid email	
+address.”
+o Now	try	an	email	of	your	own
+           */
+
+            //CCreat a text string for enter number with seporator
+            string enterText = "Enter a nuumber with string value";
+            //Create a string te for seporator
+            string sepaText = "Enter seporator";
+            //Create a string for the new separator'
+            string sepaNewtext = "Enter new seporator";
+            //Creat string for result text
+            string resultText = "The original text of {0} with the new seporator is {1}";
+
+            //Diplay Enter Text
+            Console.WriteLine(enterText);
+            //Recaevie user input with a console.ReadLine
+            string firstCall = Console.ReadLine();
+            //Display seporator text
+            Console.WriteLine(sepaText);
+
+            //Recaevie user input with a console.ReadLine
+            string secCall = Console.ReadLine();
+            //Conert string to char array
+            char[] newArray = secCall.ToCharArray();
+            Console.WriteLine(sepaNewtext);
+            //Diplay Result Text
+            string thirdCall = Console.ReadLine();
+            //Conert string to char array
+            char[] newArrayTwo = thirdCall.ToCharArray();
+            //Convert
+            string newEnter = firstCall.Replace(newArray[0], newArrayTwo[0]);
+
+            //Recaevie user input with a console.ReadLine
+            //Create path for call
+
+            Console.WriteLine(resultText, firstCall, newEnter);
+
+            //Caall Fuctru
+
+        }
+        //Create a call function for 
+        public static void SwappFunc(string funOne, string funTwo)
+        {
+
+
+            //Console.WriteLine("The original text of {0} with the new seporator is {1}", funOne  Console.WriteLine("The original text of {0} with the new seporator is {1}", funOne, funTwo););
+
+            /*
+             * List	– “1,2,3,4,5”	orginalSeparator	– “,”	newSeparator	– “-”
+            § Results	– “The	original	string	of	1,2,3,4,5 with	the	new	separator	is	1-2-3-
+            4-5.”
+            o List	– “red:	blue:	green:	pink”	orginalSeparator	– “:”	newSeparator	– “,”
+            § Results	– “The	original	string	red:	blue:	green:	pink	with	the	new	
+            separator	is	red,	blue,	green,	pink.”
+            o Now	try	one	of	your	own.
+            */
