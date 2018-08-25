@@ -1,0 +1,94 @@
+ //Create a variable for the strings ask user for ther age
+            string ageText = "Enter your age";
+            //Create a variable for user to enter movie time
+            string timeText= "Enter time of movie (Assume whole numbers here and use military time.)";
+            //Create a string with the text of try agin
+            string agin = "Enter a number";
+            //Create text string for result ticket pricw
+            string resultText = "The ticket price is ";
+            //Create double variable to reseve user number
+            double numeAge;
+            double numTime;
+            //Creat double variable for ticket price
+            decimal regPrice = 12.00m;
+            decimal discount = 7.00m;
+            decimal disTime = 7.00m;
+       
+
+
+            //Calculate 
+
+            //Create a variable for discount
+            decimal withDis = regPrice - discount;
+            decimal disWithTime =regPrice-discount - disTime;
+
+
+
+
+
+
+
+            //Display prompt for age 
+            Console.WriteLine(ageText);
+            //Receive the user value
+            string userNum = Console.ReadLine();
+            //Valdiate thate the user is entering a number
+            while(!double.TryParse(userNum,out numeAge))
+            {
+                //Tell the user to try agin
+                Console.WriteLine(agin);
+                //Re catch user statement
+                userNum = Console.ReadLine();
+            }
+            //Ask the user for the time of the movie
+            Console.WriteLine(timeText);
+            //use a string value to recieve user answer for time
+            string timeNum = Console.ReadLine();
+            //Create a while statement to validate that the user is entering a number
+            while(!double.TryParse(timeNum, out numTime))
+            {
+                //Tell the user to try agin
+                Console.WriteLine(agin);
+                //Re catch user statement
+                timeNum = Console.ReadLine();
+
+            }
+            //Create result for user answer
+            
+            if (numeAge >= 55 )
+            {
+                //Display uaer reslult
+                Console.WriteLine(resultText + discount);
+                
+            }
+            else if (numeAge < 10)
+            {
+                //Display uaer reslult
+                Console.WriteLine(resultText + discount);
+            }
+            else if (numTime > 14 && numTime < 17)
+            {
+                //Display uaer reslult
+                Console.WriteLine(resultText + discount);
+            }
+            else
+            {
+                //Display uaer reslult
+                Console.WriteLine(resultText + regPrice);
+            }
+            while(numTime > 14 && numTime < 17)
+            {
+                Console.WriteLine("In addition to your Age discount of $7.00 "+resultText +"now "+"$"+ disWithTime);
+                break;
+            }
+
+
+
+            /*
+             * Age	– 57,	Time	– 20,	Ticket	Price	- $7.00
+             o Age	– 9,	Time	– 20,	Ticket	Price	- $7.00
+             o Age	– 38,	Time	– 20,	Ticket	Price	- $12.00
+             o Age	– 25,	Time	– 16,	Ticket	Price	- $7.00
+             o Test	One	Of	Your	Own &	Write	the	results	in	your	comment	section.
+             o Age - 56,Time 15 ticket price $-2.00
+             */
