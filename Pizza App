@@ -1,0 +1,77 @@
+//Text prompts
+            string textOrder = "How many pizzas did you order? ";
+            string textSlices = "How many slices did you have? ";
+            string textGuest = "How many guest will be at the party? ";
+            string textAte = "How many slices will each guest eat ";
+            string tryNum = "Please enter a number";
+            //Ask user
+            Console.WriteLine(textOrder);
+            //Receive user input
+            string pizzaOrder = Console.ReadLine();
+            //Store response 
+            string pizzas = Console.ReadLine();
+
+            //Conver string to number input
+            double numPizza;
+            //use While to make sure user is typing in an Number
+            while (!double.TryParse(pizzaOrder, out numPizza))
+            {
+                Console.WriteLine(tryNum);
+                //Re Receive answer
+                pizzaOrder = Console.ReadLine();
+            }
+            //Input user value you have ordered
+            Console.WriteLine("You have ordered a total of " + pizzaOrder + " pizzas\r\n");
+            //Askk for slices
+            string sliceText;
+            Console.WriteLine(textSlices);
+            sliceText = Console.ReadLine();
+            
+            
+            //Save response slice
+            
+            //Creats double to convert
+            double sliceNum;
+            string sliceTaste;
+            //Make sure user inputs a number
+            while (!double.TryParse(sliceText, out sliceNum))
+            {
+                Console.WriteLine(tryNum);
+                sliceText = Console.ReadLine();
+
+
+            }
+            //Enrty
+            Console.WriteLine("You had a total of " + sliceText+" slices of pizza\r\n");
+
+            //Guest
+            string guestIn;
+            Console.WriteLine(textGuest);
+            guestIn = Console.ReadLine();
+            double guestNum;
+            while(!double.TryParse(guestIn,out guestNum))
+            {
+                Console.WriteLine(tryNum);
+                guestIn = Console.ReadLine();
+            }
+            //Entered guest
+            Console.WriteLine("You have entered a total of " + guestIn + " guest will be at the party\r\n");
+
+            string ateUp;
+            Console.WriteLine(textAte);
+            ateUp = Console.ReadLine();
+            //creat a double
+            double ateNume;
+            //Validate
+            while (!double.TryParse(ateUp, out ateNume))
+            {
+                Console.WriteLine(tryNum);
+                ateUp = Console.ReadLine();
+            }
+            Console.WriteLine("Number of slices that each guest had is " + ateUp );
+
+
+
+            
+
+
